@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import splitter from "@/app/assets/images/logo.svg"
+import dollan from "@/app/assets/images/icon-dollar.svg"
+import dollanDark from "@/app/assets/images/icon-person.svg"
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -36,14 +38,26 @@ export default function Home() {
           let tipAmount = Number(bill) * (Number(tipPHolder) / 100)
           let totAmount = Number(bill) + tipAmount
           let totPerPerson = (Math.round((totAmount / Number(peeps)) * 100)) / 100;
-          let tipPerPerson = (Math.round((tipAmount / Number(peeps)) * 100)) / 100;
-          
-          let checkEndOne = String(totPerPerson).split(".")
-          let midResultOne = checkEndOne[1].padEnd(2, "0")
-          let endResultOne = checkEndOne[0] + "." + midResultOne;
-          let checkEndTwo = String(tipPerPerson).split(".")
-          let midResultTwo = checkEndTwo[1].padEnd(2, "0")
-          let endResultTwo = checkEndTwo[0] + "." + midResultTwo;
+          let tipPerPerson = (Math.floor((tipAmount / Number(peeps)) * 100)) / 100;
+
+          let endResultOne: string;
+          let endResultTwo: string;
+
+          if (String(totPerPerson).indexOf(".") !== -1) {
+            let checkEndOne = String(totPerPerson).split(".")
+            let midResultOne = checkEndOne[1].padEnd(2, "0")
+            endResultOne = checkEndOne[0] + "." + midResultOne;
+          } else {
+            endResultOne = totPerPerson + ".00";
+          }
+
+          if (String(tipPerPerson).indexOf(".") !== -1) {
+            let checkEndTwo = String(tipPerPerson).split(".")
+            let midResultTwo = checkEndTwo[1].padEnd(2, "0")
+            endResultTwo = checkEndTwo[0] + "." + midResultTwo;
+          } else {
+            endResultTwo = tipPerPerson + ".00";
+          }
 
           setTotalPerPerson(endResultOne);
           setTipOnlyAmount(endResultTwo);
@@ -70,70 +84,86 @@ export default function Home() {
   }, [bill, tipP, peeps, custTipP])
 
   return (
-    <div className="bg-[#c5e4e7]">
+    <div className="bg-[#c5e4e7] spaceMono">
       <div className="flex justify-center pt-36 -mb-36">
-        <img className="w-18 h-12" src={splitter.src} alt="" />
+        <img className="w-20 h-12" src={splitter.src} alt="" />
       </div>
 
       <div className="min-h-screen grid place-items-center">
-        <div className="bg-white w-8/12 h-3/6 rounded-[30px] grid grid-cols-2">
-          <div className="my-10 mr-4 ml-8">
-            <p className="">Bill</p>
-            <input value={bill} onChange={(e) => setBill(e.target.value)} className="w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
-
-            <p>Select Tip %</p>
-            <div className="grid grid-cols-3">
-              <button onClick={() => { setCusTipP(""); setTipP("5") }}>5%</button>
-              <button onClick={() => { setCusTipP(""); setTipP("10") }}>10%</button>
-              <button onClick={() => { setCusTipP(""); setTipP("15") }}>15%</button>
-              <button onClick={() => { setCusTipP(""); setTipP("25") }}>25%</button>
-              <button onClick={() => { setCusTipP(""); setTipP("50") }}>50%</button>
-              <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="w-12 rounded-md h-12 bg-[#f4fafa]" type="number" placeholder='Custom' />
-              <button>Custom</button>
-            </div>
-
-            <div className="flex justify-between">
-              <p>Number Of People</p>
-              {
-                isPeepsZero && <p>Can't be zero</p>
-              }
-            </div>
-            <input value={peeps} onChange={(e) => setPeeps(e.target.value)} className="w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
-          </div>
-
-          <div className="bg-[#00494d] my-10 ml-4 mr-8">
-            <div className="flex justify-between">
+        <div className="bg-white w-8/12 h-3/6 rounded-[30px] pl-12 pr-8 py-8 gap-8 grid grid-cols-2">
+          <div className="pr-2 grid grid-cols-1 place-content-between">
+            <div className="pt-4">
+              <p className="text-[#00494d]">Bill</p>
               <div>
-                <p>Tip Amount</p>
-                <p>/ person</p>
+                <input value={bill} onChange={(e) => setBill(e.target.value)} className="spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
+                <img className="-mt-7 mb-[11px]" src={dollan.src} alt="" />
               </div>
-              <div>
-                {
-                  tipOnlyAmount ? <p className="text-[#26c0ab]">${tipOnlyAmount}</p> : <p className="text-[#26c0ab]">$0.00</p>
-                }              </div>
             </div>
 
-            <div className="flex justify-between">
-              <div>
-                <p className="">Total</p>
-                <p className="">/ person</p>
-              </div>
-              <div>
+            <div>
+              <p className="text-[#00494d]">Select Tip %</p>
+              <div className="grid grid-cols-3 gap-3">
+                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("5") }}>5%</button>
+                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("10") }}>10%</button>
+                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("15") }}>15%</button>
+                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("25") }}>25%</button>
+                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("50") }}>50%</button>
                 {
-                  totalPerPerson ? <p className="text-[#26c0ab]">${totalPerPerson}</p> : <p className="text-[#26c0ab]">$0.00</p>
+                  custTipP ? <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="spaceMonoB text-[#00494d] text-2xl text-right w-full rounded-md bg-[#f4fafa]" type="number" placeholder='Custom' /> : <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="spaceMonoB text-[#00494d] text-2xl text-center w-full rounded-md bg-[#f4fafa]" type="number" placeholder='Custom' />
+                }
+                </div>
+            </div>
+
+            <div>
+              <div className="flex justify-between">
+                <p className="text-[#00494d]">Number Of People</p>
+                {
+                  isPeepsZero && <p>Can't be zero</p>
                 }
               </div>
+              <div className="">
+                <input value={peeps} onChange={(e) => setPeeps(e.target.value)} className="spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
+                <img className="-mt-7 mb-[11px]" src={dollanDark.src} alt="" />
+              </div>
             </div>
+          </div>
 
-            <div className="flex justify-center">
-              <button onClick={() => resetValues()}>Reset</button>
+          <div className="bg-[#00494d] flex justify-center rounded-xl">
+            <div className=" w-4/5 grid grid-cols-1 place-content-between">
+
+              <div>
+                <div className="flex justify-between py-12">
+                  <div>
+                    <p className="text-[#f4fafa] text-sm">Tip Amount</p>
+                    <p className="text-[#7f9c9f] text-xs">/ person</p>
+                  </div>
+                  <div>
+                    {
+                      tipOnlyAmount ? <p className="spaceMonoB text-[#26c0ab] text-[46px] lineH">${tipOnlyAmount}</p> : <p className="text-[#26c0ab] spaceMonoB text-[46px] lineH">$0.00</p>
+                    }
+                  </div>
+                </div>
+
+                <div className="flex justify-between">
+                  <div>
+                    <p className="text-[#f4fafa] text-sm">Total</p>
+                    <p className="text-[#7f9c9f] text-xs">/ person</p>
+                  </div>
+                  <div>
+                    {
+                      totalPerPerson ? <p className="spaceMonoB text-[#26c0ab] text-[46px] lineH">${totalPerPerson}</p> : <p className="text-[#26c0ab] spaceMonoB text-[46px] lineH">$0.00</p>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <button className="bg-[#26c0ab] h-12 rounded-md text-xl pt-[2px] mb-10 text-[#00494d] w-full spaceMonoB" onClick={() => resetValues()}>RESET</button>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
-
   );
 }

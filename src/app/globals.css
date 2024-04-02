@@ -37,3 +37,25 @@ body {
     color: #f4fafa;
   }
 }
+
+@font-face {
+  font-family: SpaceMono;
+  src: url(./assets/fonts/SpaceMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: SpaceMonoBold;
+  src: url(./assets/fonts/SpaceMono-Bold.ttf);
+}
+
+.spaceMono{
+  font-family: SpaceMono;
+}
+
+.spaceMonoB{
+  font-family: SpaceMonoBold;
+}
+
+.lineH{
+  line-height: 2.6rem;	
+}
