@@ -35,10 +35,18 @@ export default function Home() {
         } else {
           let tipAmount = Number(bill) * (Number(tipPHolder) / 100)
           let totAmount = Number(bill) + tipAmount
-          let totPerPerson = totAmount / Number(peeps)
-          let tipPerPerson = tipAmount / Number(peeps)
-          setTotalPerPerson(String(totPerPerson));
-          setTipOnlyAmount(String(tipPerPerson));
+          let totPerPerson = (Math.round((totAmount / Number(peeps)) * 100)) / 100;
+          let tipPerPerson = (Math.round((tipAmount / Number(peeps)) * 100)) / 100;
+          
+          let checkEndOne = String(totPerPerson).split(".")
+          let midResultOne = checkEndOne[1].padEnd(2, "0")
+          let endResultOne = checkEndOne[0] + "." + midResultOne;
+          let checkEndTwo = String(tipPerPerson).split(".")
+          let midResultTwo = checkEndTwo[1].padEnd(2, "0")
+          let endResultTwo = checkEndTwo[0] + "." + midResultTwo;
+
+          setTotalPerPerson(endResultOne);
+          setTipOnlyAmount(endResultTwo);
         }
       } else {
         setTotalPerPerson(undefined);
