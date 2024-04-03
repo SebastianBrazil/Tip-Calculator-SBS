@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -48,14 +45,52 @@ body {
   src: url(./assets/fonts/SpaceMono-Bold.ttf);
 }
 
-.spaceMono{
+.spaceMono {
   font-family: SpaceMono;
 }
 
-.spaceMonoB{
+.spaceMonoB {
   font-family: SpaceMonoBold;
 }
 
-.lineH{
-  line-height: 2.6rem;	
+.lineH {
+  line-height: 2.6rem;
+}
+
+.input1::placeholder {
+  color: #5e7a7d;
+}
+
+.input2::placeholder {
+  color: #a0b5b6;
+}
+
+.input2:focus,
+.input1:focus {
+  outline: 2px solid #26c0ab;
+}
+
+.input2Zero::placeholder {
+  color: #a0b5b6;
+}
+
+.input2Zero {
+  outline: 2px solid #dc755e;
+  border-color: none;
+  border-width: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.hober:hover {
+  background-color: #9fe8df;
+  color: #00494d;
 }
