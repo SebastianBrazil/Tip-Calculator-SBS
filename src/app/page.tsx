@@ -91,39 +91,39 @@ export default function Home() {
 
       <div className="min-h-screen grid place-items-center">
         <div className="bg-white w-8/12 h-3/6 rounded-[30px] pl-12 pr-8 py-8 gap-8 grid grid-cols-2">
-          <div className="pr-2 grid grid-cols-1 place-content-between">
-            <div className="pt-4">
-              <p className="text-[#00494d]">Bill</p>
+          <div className="pr-2 grid py-4 grid-cols-1 place-content-between">
+            <div>
+              <p className="text-[#00494d] text-sm pb-1">Bill</p>
               <div>
-                <input value={bill} onChange={(e) => setBill(e.target.value)} className="spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
-                <img className="-mt-7 mb-[11px]" src={dollan.src} alt="" />
+                <input value={bill} onChange={(e) => setBill(e.target.value)} className="pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
+                <img className="-mt-7 mb-[11px] ml-4" src={dollan.src} alt="" />
               </div>
             </div>
 
             <div>
-              <p className="text-[#00494d]">Select Tip %</p>
-              <div className="grid grid-cols-3 gap-3">
-                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("5") }}>5%</button>
-                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("10") }}>10%</button>
-                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("15") }}>15%</button>
-                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("25") }}>25%</button>
-                <button className="bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("50") }}>50%</button>
+              <p className="text-[#00494d] pb-4">Select Tip %</p>
+              <div className="grid grid-cols-3 gap-4">
+                <button className="rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("5") }}>5%</button>
+                <button className="rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("10") }}>10%</button>
+                <button className="rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("15") }}>15%</button>
+                <button className="rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("25") }}>25%</button>
+                <button className="rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { setCusTipP(""); setTipP("50") }}>50%</button>
                 {
-                  custTipP ? <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="spaceMonoB text-[#00494d] text-2xl text-right w-full rounded-md bg-[#f4fafa]" type="number" placeholder='Custom' /> : <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="spaceMonoB text-[#00494d] text-2xl text-center w-full rounded-md bg-[#f4fafa]" type="number" placeholder='Custom' />
+                  custTipP ? <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="spaceMonoB text-[#00494d] text-2xl text-right w-full rounded-md bg-[#f4fafa] py-2 pr-4" type="number" placeholder='Custom' /> : <input value={custTipP} onChange={(e) => { setTipP(""); setCusTipP(e.target.value) }} className="spaceMonoB text-[#00494d] text-2xl text-center w-full rounded-md bg-[#f4fafa]" type="number" placeholder='Custom' />
                 }
                 </div>
             </div>
 
             <div>
               <div className="flex justify-between">
-                <p className="text-[#00494d]">Number Of People</p>
+                <p className="text-[#00494d] pb-1 text-sm">Number Of People</p>
                 {
                   isPeepsZero && <p>Can't be zero</p>
                 }
               </div>
               <div className="">
-                <input value={peeps} onChange={(e) => setPeeps(e.target.value)} className="spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
-                <img className="-mt-7 mb-[11px]" src={dollanDark.src} alt="" />
+                <input value={peeps} onChange={(e) => setPeeps(e.target.value)} className="pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
+                <img className="-mt-7 mb-[11px] ml-4" src={dollanDark.src} alt="" />
               </div>
             </div>
           </div>
