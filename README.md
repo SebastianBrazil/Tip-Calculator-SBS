@@ -1,10 +1,10 @@
 Sebastian Breve-Sanchez
 
-4/ /24
+4/3/24
 
 Tip Calculator
 
-Desc
+Designed at 1440 by 900 px and 375 by 700 px. This website is a calculator that determines how much of a tip and total cost each person should pay based on the bill, amount of people paying, and the tip percentage. 
 
 4/1/24 pt1: Made the basic layout for the page and its elements. Styling and sizing are still needed.
 4/1/24 pt2: Decided to temporarily suspend styling to work on logic. It is, in all effect, done, but some formatting with zeros is still needed.
@@ -12,5 +12,6 @@ Desc
 4/2/24 pt2: Added a lot of desktop styling as well as made some logic modifications. Responsiveness, hovers and active states, and some more desktop styling are still needed.
 4/2/24 pt3: All of the styling is done, the next thing to work on is the hover and focus states.
 4/3/24 pt1: Finished all of the hovers and focus states, with some more logic sprinkled in. Finally mobile can commence.
+4/3/24 pt2: Completed mobile, along the way modifying some code for the desktop version as well. Finished.
 
 Peer Review:

@@ -162,25 +162,25 @@ export default function Home() {
   }, [bill, tipP, peeps, custTipP])
 
   return (
-    <div className="bg-[#c5e4e7] spaceMono">
-      <div className="flex justify-center pt-36 -mb-36">
+    <div className="bg-[#c5e4e7] spaceMono min-h-screen h-full grid place-content-evenly">
+      <div className="flex justify-center py-10 lg:-mt-10">
         <img className="w-20 h-12" src={splitter.src} alt="" />
       </div>
 
-      <div className="min-h-screen grid place-items-center">
-        <div className="bg-white w-8/12 h-3/6 rounded-[30px] pl-12 pr-8 py-8 gap-8 grid grid-cols-2">
-          <div className="pr-2 grid py-4 grid-cols-1 place-content-between">
-            <div>
-              <p className="text-[#00494d] text-sm pb-1">Bill</p>
-              <div>
+      <div className="grid place-items-center lg:-mt-24">
+        <div className="bg-white lg:w-8/12 rounded-t-3xl lg:rounded-[30px] pl-7 pr-7 lg:pl-12 lg:pr-8 py-8 gap-8 grid grid-cols-1 lg:grid-cols-2">
+          <div className="lg:pr-2 grid lg:py-4 grid-cols-1 place-content-between">
+            <div className="lg:pb-10">
+              <p className="text-[#00494d] pb-1">Bill</p>
+              <div className="max-lg:pb-8">
                 <input value={bill} onChange={(e) => setBill(e.target.value)} className="input2 pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
-                <img className="-mt-7 mb-[11px] ml-4" src={dollan.src} alt="" />
+                <img className="-mt-7 mb-[11px] ml-5" src={dollan.src} alt="" />
               </div>
             </div>
 
-            <div>
+            <div className="pb-10">
               <p className="text-[#00494d] pb-4">Select Tip %</p>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                   isButtonSelected1 ? <button className="hober rounded-md bg-[#26c0ab] py-2 text-[#00494d] text-2xl" onClick={() => { activateBtn1(); setCusTipP(""); setTipP("5") }}>5%</button> : <button className="hober rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { activateBtn1(); setCusTipP(""); setTipP("5") }}>5%</button>
                 }
@@ -204,12 +204,12 @@ export default function Home() {
 
             <div>
               <div className="flex justify-between">
-                <p className="text-[#00494d] pb-1 text-sm">Number Of People</p>
+                <p className="text-[#00494d] pb-1">Number Of People</p>
                 {
                   isPeepsZero && <p className="text-sm pb-1 text-[#dc755e]">Can't be zero</p>
                 }
               </div>
-              <div className="">
+              <div>
                 {
                   isPeepsZero ? <input value={peeps} onChange={(e) => setPeeps(e.target.value)} className="pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 input2Zero bg-[#f4fafa]" type="number" placeholder='0' /> : <input value={peeps} onChange={(e) => setPeeps(e.target.value)} className="input2 pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
                 }
@@ -219,35 +219,34 @@ export default function Home() {
           </div>
 
           <div className="bg-[#00494d] flex justify-center rounded-xl">
-            <div className=" w-4/5 grid grid-cols-1 place-content-between">
-
-              <div>
-                <div className="flex justify-between py-12">
+            <div className="w-[85%] lg:w-4/5 grid grid-cols-1 place-content-between">
+              <div className="max-lg:pb-10">
+                <div className="flex justify-between max-lg:pt-12 max-lg:pb-8 lg:py-12">
                   <div>
-                    <p className="text-[#f4fafa] text-sm">Tip Amount</p>
-                    <p className="text-[#7f9c9f] text-xs">/ person</p>
+                    <p className="text-[#f4fafa]">Tip Amount</p>
+                    <p className="text-[#7f9c9f] text-sm">/ person</p>
                   </div>
                   <div>
                     {
-                      tipOnlyAmount ? <p className="spaceMonoB text-[#26c0ab] text-[46px] lineH">${tipOnlyAmount}</p> : <p className="text-[#26c0ab] spaceMonoB text-[46px] lineH">$0.00</p>
+                      tipOnlyAmount ? <p className="spaceMonoB text-[#26c0ab] text-3xl lg:text-[46px] lineH">${tipOnlyAmount}</p> : <p className="text-[#26c0ab] spaceMonoB text-3xl lg:text-[46px] lineH">$0.00</p>
                     }
                   </div>
                 </div>
 
                 <div className="flex justify-between">
                   <div>
-                    <p className="text-[#f4fafa] text-sm">Total</p>
-                    <p className="text-[#7f9c9f] text-xs">/ person</p>
+                    <p className="text-[#f4fafa]">Total</p>
+                    <p className="text-[#7f9c9f] text-sm">/ person</p>
                   </div>
                   <div>
                     {
-                      totalPerPerson ? <p className="spaceMonoB text-[#26c0ab] text-[46px] lineH">${totalPerPerson}</p> : <p className="text-[#26c0ab] spaceMonoB text-[46px] lineH">$0.00</p>
+                      totalPerPerson ? <p className="spaceMonoB text-[#26c0ab] text-3xl lg:text-[46px] lineH">${totalPerPerson}</p> : <p className="text-[#26c0ab] spaceMonoB text-3xl lg:text-[46px] lineH">$0.00</p>
                     }
                   </div>
                 </div>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex justify-center max-lg:-mb-4">
                 {
                   bill !== "" || tipP !== "" || peeps !== "" || custTipP !== "" ? <button className="hober bg-[#26c0ab] h-12 rounded-md text-xl pt-[2px] mb-10 text-[#00494d] w-full spaceMonoB" onClick={() => resetValues()}>RESET</button> : <button disabled className="bg-[#29686d] h-12 rounded-md text-xl pt-[2px] mb-10 text-[#245d62] w-full spaceMonoB" onClick={() => resetValues()}>RESET</button>
                 }
