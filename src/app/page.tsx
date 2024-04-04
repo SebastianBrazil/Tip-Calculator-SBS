@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import splitter from "@/app/assets/images/logo.svg"
 import dollan from "@/app/assets/images/icon-dollar.svg"
 import dollanDark from "@/app/assets/images/icon-person.svg"
