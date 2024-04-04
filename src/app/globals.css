@@ -26,12 +26,6 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-    color: #26c0ab;
-    color: #00494d;
-    color: #5e7a7d;
-    color: #7f9c9f;
-    color: #c5e4e7;
-    color: #f4fafa;
   }
 }
 
