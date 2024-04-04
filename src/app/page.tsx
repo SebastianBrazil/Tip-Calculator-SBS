@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import splitter from "@/app/assets/images/logo.svg"
 import dollan from "@/app/assets/images/icon-dollar.svg"
@@ -172,7 +172,7 @@ export default function Home() {
             <div className="lg:pb-10">
               <p className="text-[#00494d] pb-1">Bill</p>
               <div className="max-lg:pb-8">
-                <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={bill} onChange={(e) => setBill(e.target.value)} className="input2 pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
+                <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={bill} onChange={(e) => setBill(e.target.value)} className="input2 pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder="0" />
                 <img className="-mt-7 mb-[11px] ml-5" src={dollan.src} alt="" />
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function Home() {
                   isButtonSelected5 ? <button className="hober rounded-md bg-[#26c0ab] py-2 text-[#00494d] text-2xl" onClick={() => { activateBtn5(); setCusTipP(""); setTipP("50") }}>50%</button> : <button className="hober rounded-md bg-[#00494d] py-2 text-[#f4fafa] text-2xl" onClick={() => { activateBtn5(); setCusTipP(""); setTipP("50") }}>50%</button>
                 }
                 {
-                  custTipP ? <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={custTipP} onChange={(e) => { deactivateBtns(); setTipP(""); setCusTipP(e.target.value) }} className="input1 spaceMonoB text-[#00494d] text-2xl text-right w-full rounded-md bg-[#f4fafa] py-2 pr-4" type="number" placeholder='Custom' /> : <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={custTipP} onChange={(e) => { deactivateBtns(); setTipP(""); setCusTipP(e.target.value) }} className="input1 spaceMonoB text-[#00494d] text-2xl text-center w-full rounded-md bg-[#f4fafa]" type="number" placeholder='Custom' />
+                  custTipP ? <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={custTipP} onChange={(e) => { deactivateBtns(); setTipP(""); setCusTipP(e.target.value) }} className="input1 spaceMonoB text-[#00494d] text-2xl text-right w-full rounded-md bg-[#f4fafa] py-2 pr-4" type="number" placeholder="Custom" /> : <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={custTipP} onChange={(e) => { deactivateBtns(); setTipP(""); setCusTipP(e.target.value) }} className="input1 spaceMonoB text-[#00494d] text-2xl text-center w-full rounded-md bg-[#f4fafa]" type="number" placeholder="Custom" />
                 }
               </div>
             </div>
@@ -205,12 +205,12 @@ export default function Home() {
               <div className="flex justify-between">
                 <p className="text-[#00494d] pb-1">Number Of People</p>
                 {
-                  isPeepsZero && <p className="text-sm pb-1 text-[#dc755e]">Can't be zero</p>
+                  isPeepsZero && <p className="text-sm pb-1 text-[#dc755e]">{`Can't be zero`}</p>
                 }
               </div>
               <div>
                 {
-                  isPeepsZero ? <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={peeps} onChange={(e) => setPeeps(e.target.value)} className="pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 input2Zero bg-[#f4fafa]" type="number" placeholder='0' /> : <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={peeps} onChange={(e) => setPeeps(e.target.value)} className="input2 pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder='0' />
+                  isPeepsZero ? <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={peeps} onChange={(e) => setPeeps(e.target.value)} className="pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 input2Zero bg-[#f4fafa]" type="number" placeholder="0" /> : <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} value={peeps} onChange={(e) => setPeeps(e.target.value)} className="input2 pr-4 spaceMonoB text-2xl text-[#00494d] text-right w-full rounded-md h-10 bg-[#f4fafa]" type="number" placeholder="0" />
                 }
                 <img className="-mt-7 mb-[11px] ml-4" src={dollanDark.src} alt="" />
               </div>
