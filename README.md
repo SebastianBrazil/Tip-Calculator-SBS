@@ -1,6 +1,6 @@
 Sebastian Breve-Sanchez
 
-4/3/24
+4/4/24
 
 Tip Calculator
 
@@ -13,6 +13,7 @@ Designed at 1440 by 900 px and 375 by 700 px. This website is a calculator that 
 4/2/24 pt3: All of the styling is done, the next thing to work on is the hover and focus states.
 4/3/24 pt1: Finished all of the hovers and focus states, with some more logic sprinkled in. Finally mobile can commence.
 4/3/24 pt2: Completed mobile, along the way modifying some code for the desktop version as well. Finished.
+4/4/24: Added a bit of code supplied by Aidan
 
 Peer Reviewed by: Alexander Soria
 Peer Review: The site works very well and accurately represents the design as given by the template. You can input the bill, the amount of people, and the amount to tip, and it calculates the totals accurately. Inputting in the custom button automatically deselects whichever percentage you initially selected, which I applaud for how it was implemented. It's very responsive and everything fits nicely on a mobile device. Overall a very good design where its functions work without anyway to necessarily break it.
